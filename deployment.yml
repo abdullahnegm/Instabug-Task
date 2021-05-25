@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: goviolin-deployment
+  labels:
+    app: goviolin
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: goviolin
+  template:
+    metadata:
+      labels:
+        app: goviolin
+    spec:
+      containers:
+      - name: goviolin
+        image: respect1/goviolin
+        ports:
+        - containerPort: 8080
