@@ -4,9 +4,8 @@ pipeline {
     stages {
         stage('test') {
             steps {
-                sh 'ls'
+                sh 'rm -rf GoViolin'
                 sh 'git clone https://github.com/Rosalita/GoViolin'
-                sh 'ls'
             }
         }
         stage('Build') {
