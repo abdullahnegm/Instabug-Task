@@ -2,7 +2,7 @@ pipeline {
     agent any
  
     stages {
-        stage('test') {
+        stage('Clone git repo') {
             steps {
                 sh 'rm -rf GoViolin'
                 sh 'git clone https://github.com/Rosalita/GoViolin'
