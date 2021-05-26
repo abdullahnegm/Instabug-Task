@@ -1,0 +1,18 @@
+- name: Instabug Task
+  become: yes
+  hosts: aws
+
+  vars:
+    jenkins_path: ../jenkins/Dockerfile
+
+  pre_tasks:
+    - name: Update apt cache 
+      apt:
+        update_cache: yes
+
+  roles:
+    - docker
+  
+  tasks:
+    - name: Container task
+      import_tasks: container.yml
